@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="width_control">{{ survey['name'] }}</h1>
+        <p class="width_control">Dojo Location: {{ survey['location'] }} </p>
+        <p class="width_control">Favorite Language: {{ survey['language'] }} </p>
+        <p class="width_control">Comments: {{ survey['comment'] }} </p>
+        <div class="top_border">
+            <a href="/" class="width_control home_link">Home</a>
+        </div>
+    </div>
+</body>
+</html>

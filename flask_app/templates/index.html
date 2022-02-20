@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Dojo Survey</h1>
+        <form action="/info_submission" method="post">
+            <label class="width_control" for="name">Name:</label>
+            <input class="width_control name_box" type="text" name="name" id="name">
+            <label class="width_control" for="location">Location:</label>
+            <select class="width_control dropdown" name="location" id="location">
+                <option value="none">--Choose an option--</option>
+                <option value="chicago">Chicago</option>
+                <option value="seattle">Seattle</option>
+                <option value="online">Online</option>
+                <option value="burbank">Burbank</option>
+                <option value="bellevue">Bellevue</option>
+            </select>
+            <label class="width_control" for="fav_language">Favorite Language:</label>
+            <select class="width_control dropdown" name="fav_language" id="fav_language">
+                <option value="none">--Chose an option--</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="c_sharp">C#</option>
+            </select>
+            <label class="width_control" for="comments">Comments:</label>
+            <textarea class="width_control comments_box" type="text" name="comments" id="comments"></textarea>
+            <input class="width_control submit_btn" type="submit" value="Submit">
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
